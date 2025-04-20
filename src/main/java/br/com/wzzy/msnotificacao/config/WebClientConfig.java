@@ -6,15 +6,21 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
-public class CatalogoWebClient {
+public class WebClientConfig {
 
     @Value("${ms.catalogo.url}")
-    private String catalgoUrl;
+    private String catalogoUrl;
+
+    @Value("${ms.comprovante.url}")
+    private String comprovanteUrl;
 
     @Bean
     public WebClient catalogoWebClient() {
-        return WebClient.builder()
-                .baseUrl(catalgoUrl)
-                .build();
+        return WebClient.builder().baseUrl(catalogoUrl).build();
+    }
+
+    @Bean
+    public WebClient comprovanteWebClient() {
+        return WebClient.builder().baseUrl(comprovanteUrl).build();
     }
 }
