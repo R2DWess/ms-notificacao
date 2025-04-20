@@ -1,6 +1,7 @@
 package br.com.wzzy.msnotificacao.controller;
 
 import br.com.wzzy.msnotificacao.model.dto.CompraResponseDTO;
+import br.com.wzzy.msnotificacao.model.dto.CompraSolicitacaoDTO;
 import br.com.wzzy.msnotificacao.service.CompraService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
