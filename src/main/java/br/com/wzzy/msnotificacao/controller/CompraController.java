@@ -22,7 +22,7 @@ public class CompraController {
     }
 
     @PostMapping
-    public Mono<ResponseEntity<CompraResponseDTO>> realizarCompra(@RequestBody List<Integer> idsProdutos) {
+    public Mono<ResponseEntity<CompraResponseDTO>> processarCompra(@RequestBody List<Integer> idsProdutos) {
         return compraService.processarCompra(idsProdutos)
                 .map(ResponseEntity::ok);
     }
