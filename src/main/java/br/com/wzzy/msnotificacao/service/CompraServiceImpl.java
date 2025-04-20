@@ -1,7 +1,9 @@
 package br.com.wzzy.msnotificacao.service;
 
+import br.com.wzzy.msnotificacao.model.dto.CompraRequestDTO;
 import br.com.wzzy.msnotificacao.model.dto.CompraResponseDTO;
 import br.com.wzzy.msnotificacao.model.dto.ProdutoDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
@@ -18,13 +20,27 @@ public class CompraServiceImpl implements CompraService {
         this.catalogoWebClient = catalogoWebClient;
     }
 
+    @Autowired
+    private WebClient comprovanteWebClient;
+
     @Override
     public Mono<CompraResponseDTO> processarCompra(List<Integer> idsProdutos) {
         return Flux.fromIterable(idsProdutos)
                 .flatMap(this::buscarProdutoPorId)
                 .collectList()
-                .map(produtos -> new CompraResponseDTO("Compra processada com sucesso!", produtos));
+                .flatMap(produtos -> {
+                    CompraRequestDTO comprovante = new CompraRequestDTO();
+                    comprovante.setEmailCliente("cliente@teste.com");
+                    comprovante.setProdutoDTO(produtos);
+
+                    return comprovanteWebClient.post()
+                            .bodyValue(comprovante)
+                            .retrieve()
+                            .bodyToMono(String.class)
+                            .map(msg -> new CompraResponseDTO("Compra finalizada com comprovante: " + msg, produtos));
+                });
     }
+
 
 
     public Mono<ProdutoDTO> buscarProdutoPorId(int id) {
