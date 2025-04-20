@@ -14,13 +14,13 @@ import reactor.core.publisher.Mono;
 public class CompraServiceImpl implements CompraService {
 
     private final WebClient catalogoWebClient;
+    private final WebClient comprovanteWebClient;
 
-    public CompraServiceImpl(WebClient catalogoWebClient) {
+    public CompraServiceImpl(WebClient catalogoWebClient,
+                             WebClient comprovanteWebClient) {
         this.catalogoWebClient = catalogoWebClient;
+        this.comprovanteWebClient = comprovanteWebClient;
     }
-
-    @Autowired
-    private WebClient comprovanteWebClient;
 
     @Override
     public Mono<CompraResponseDTO> processarCompra(CompraSolicitacaoDTO solicitacao) {
@@ -30,7 +30,7 @@ public class CompraServiceImpl implements CompraService {
                 .flatMap(produtos -> {
                     CompraRequestDTO comprovante = new CompraRequestDTO();
                     comprovante.setEmailCliente(solicitacao.getEmailCliente());
-                    comprovante.setProdutoDTO(produtos);
+                    comprovante.setProdutos(produtos);
 
                     return comprovanteWebClient.post()
                             .bodyValue(comprovante)

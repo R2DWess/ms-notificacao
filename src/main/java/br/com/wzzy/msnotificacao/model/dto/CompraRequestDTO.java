@@ -8,5 +8,6 @@ import java.util.List;
 public class CompraRequestDTO {
 
     private String emailCliente;
-    private List<ProdutoDTO> produtoDTO;
+    private List<ProdutoDTO> produtos;
+
 }
