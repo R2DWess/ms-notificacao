@@ -9,7 +9,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class CatalogoWebClient {
 
     @Value("${ms.catalogo.url}")
-
     private String catalgoUrl;
 
     @Bean
