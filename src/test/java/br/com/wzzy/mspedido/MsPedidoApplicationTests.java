@@ -1,10 +1,10 @@
-package br.com.wzzy.msnotificacao;
+package br.com.wzzy.mspedido;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MsNotificacaoApplicationTests {
+class MsPedidoApplicationTests {
 
     @Test
     void contextLoads() {

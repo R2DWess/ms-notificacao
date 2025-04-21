@@ -2,10 +2,10 @@
   <img src="https://iili.io/3FFO5cF.png" alt="Universidade Católica de Brasília">
 </p>
 
-## PROJETO PESSOAL - MS-NOTIFICACAO  📚:
+## PROJETO PESSOAL - MS-PEDIDO  📚:
 
 #### 📖 Descrição:
-Microsserviço de **notificação e processamento de compras**, responsável por interagir com outros microsserviços para realizar a orquestração de uma compra. Ele consome o microsserviço de catálogo (`ms-catalogo`) para obter dados dos produtos e interage com o microsserviço de comprovantes (`ms-comprovante`) para registrar o comprovante de uma compra.
+Microsserviço de **Pedido**, responsável por interagir com outros microsserviços para realizar a orquestração de uma compra. Ele consome o microsserviço de catálogo (`ms-catalogo`) para obter dados dos produtos e interage com o microsserviço de comprovantes (`ms-comprovante`) para registrar o comprovante de uma compra.
 
 #### ⚡ Funcionalidades:
 1. 🛍️ Realização de compras a partir de uma lista de produtos;

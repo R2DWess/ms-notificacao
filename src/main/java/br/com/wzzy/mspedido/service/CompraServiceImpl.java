@@ -1,10 +1,9 @@
-package br.com.wzzy.msnotificacao.service;
+package br.com.wzzy.mspedido.service;
 
-import br.com.wzzy.msnotificacao.model.dto.CompraRequestDTO;
-import br.com.wzzy.msnotificacao.model.dto.CompraResponseDTO;
-import br.com.wzzy.msnotificacao.model.dto.CompraSolicitacaoDTO;
-import br.com.wzzy.msnotificacao.model.dto.ProdutoDTO;
-import org.springframework.beans.factory.annotation.Autowired;
+import br.com.wzzy.mspedido.model.dto.CompraRequestDTO;
+import br.com.wzzy.mspedido.model.dto.CompraResponseDTO;
+import br.com.wzzy.mspedido.model.dto.CompraSolicitacaoDTO;
+import br.com.wzzy.mspedido.model.dto.ProdutoDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;

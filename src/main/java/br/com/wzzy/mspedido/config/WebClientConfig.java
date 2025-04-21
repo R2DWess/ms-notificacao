@@ -1,4 +1,4 @@
-package br.com.wzzy.msnotificacao.config;
+package br.com.wzzy.mspedido.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

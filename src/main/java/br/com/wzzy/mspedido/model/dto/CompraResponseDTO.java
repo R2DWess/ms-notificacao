@@ -1,4 +1,4 @@
-package br.com.wzzy.msnotificacao.model.dto;
+package br.com.wzzy.mspedido.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
