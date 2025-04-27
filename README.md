@@ -7,9 +7,9 @@
 #### 📖 Descrição:
 Microsserviço de **Pedido**, responsável por interagir com outros microsserviços para realizar a orquestração de uma compra. Ele consome o microsserviço de catálogo (`ms-catalogo`) para obter dados dos produtos e interage com o microsserviço de comprovantes (`ms-comprovante`) para registrar o comprovante de uma compra.
 
-- [`ms-catalogo`](https://github.com/seu-usuario/ms-catalogo) – consulta e persistência de produtos via Fake Store API + PostgreSQL (RDS)
-- [`ms-pedido`](https://github.com/seu-usuario/ms-pedido) – orquestrador que recebe as solicitações de compra e aciona os demais serviços
-- [`ms-comprovante`](https://github.com/seu-usuario/ms-comprovante) – geração de PDF, envio por e-mail e armazenamento S3
+- [`ms-catalogo`](https://github.com/R2DWess/ms-catalogo) – consulta e persistência de produtos via Fake Store API + PostgreSQL (RDS)
+- [`ms-pedido`](https://github.com/R2DWess/ms-pedido) – orquestrador que recebe as solicitações de compra e aciona os demais serviços
+- [`ms-comprovante`](https://github.com/R2DWess/ms-comprovante) – geração de PDF, envio por e-mail e armazenamento S3
 
 ---
 ## 🔁 Fluxo de Arquitetura utilizada
